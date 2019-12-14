@@ -8,6 +8,7 @@ import time
 import os
 import shutil
 from findMCC import findMCC
+from mods import addMods, removeMods, modList, mods
 
 # Check where MCC location is
 steamdir = findMCC()
@@ -19,22 +20,6 @@ ModFolder = '/MODS'
 
 #Get Vanilla Files Directory(Using steamdir as base directory)
 VanillaFiles = ModFolder + "/Vanilla Files"
-
-#make a template for mods
-class Mod():
-    def __init__(self, fileName, target):
-        self.fileName = fileName
-        self.target = target
-
-#to add a mod just follow the template [NAME] = Mod([FILENAME], [TARGETLOCATION])
-#then add your mod to modList
-
-#create an instance for each mod
-forge = Mod('MCC-WindowsNoEditor.pak', 'MCC/Content/Paks/')
-forgeMap = Mod('forge_halo.map', 'haloreach/maps/')
-
-#make a list of all mods
-modList = [forge, forgeMap]
 
 def verifyFiles():
     if not os.path.isdir(steamdir + ModFolder):
