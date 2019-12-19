@@ -100,3 +100,4 @@ ENV/
 
 # Ignore these files
 location.txt
+*.json
